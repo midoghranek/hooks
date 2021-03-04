@@ -1,13 +1,17 @@
 # React Custom Hooks
 
-## `useDidMount(function)`
+`yarn add @ghranek/hooks`
+
+## Lifecycle Hooks
+
+### `useDidMount(function)`
 
 Similar to `componentDidMount` in class component.
 
-## `useWillUnmount(function)`
+### `useWillUnmount(function)`
 
 Similar to `componentWillUnmount` in class component.
 
-## `useDidUpdate(function, [dependencies])`
+### `useDidUpdate(function, [dependencies])`
 
 Similar to `componentDidUpdate` in class component.

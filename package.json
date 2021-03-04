@@ -1,6 +1,6 @@
 {
   "name": "@ghranek/hooks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Custom React Hooks",
   "keywords": [],
   "author": "Muhammad Abul-Gharaniq <me@ghranek.com>",
@@ -11,7 +11,8 @@
   "license": "MIT",
   "scripts": {
     "build": "microbundle -o build/ --no-compress",
-    "dev": "microbundle watch -o build/ --no-compress"
+    "dev": "microbundle watch -o build/ --no-compress",
+    "release": "yarn build && git push && yarn publish"
   },
   "devDependencies": {
     "@types/react": "^17.0.2",
