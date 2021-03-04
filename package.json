@@ -1,6 +1,6 @@
 {
   "name": "@ghranek/hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom React Hooks",
   "keywords": [],
   "author": "Muhammad Abul-Gharaniq <me@ghranek.com>",
@@ -20,5 +20,10 @@
   },
   "peerDependencies": {
     "react": "^17.0.1"
+  },
+  "homepage": "https://github.com/midoghranek/hooks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midoghranek/hooks.git"
   }
 }
