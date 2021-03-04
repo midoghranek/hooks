@@ -15,3 +15,7 @@ Similar to `componentWillUnmount` in class component.
 ### `useDidUpdate(function, [dependencies])`
 
 Similar to `componentDidUpdate` in class component.
+
+## Client Hooks
+
+### `const isScreen = useMediaQuery("(max-width: 768px)")`
