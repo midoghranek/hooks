@@ -2,24 +2,29 @@ import { useState } from "react";
 import { useDidUpdate } from "./useDidUpdate";
 import { useWillUnmount } from "./useWillUnmount";
 
+const isClient = typeof window === "object";
+const isSupported = (api: string) => api in window;
+
 export const useMediaQuery = (mediaQuery: string) => {
-  if (typeof window === "object" || "matchMedia" in window) {
-    const [match, setMatch] = useState(!!window.matchMedia(mediaQuery).matches);
+  if (!isClient || !isSupported("matchMedia")) {
+    return null;
+  }
 
-    const mediaQueryList = window?.matchMedia(mediaQuery);
-    const documentChangeHandler = () => {
-      setMatch(!!mediaQueryList?.matches);
-    };
+  const [match, setMatch] = useState(!!window.matchMedia(mediaQuery).matches);
 
-    useDidUpdate(() => {
-      mediaQueryList.addEventListener("change", documentChangeHandler);
-      documentChangeHandler();
-    }, [match]);
+  const mediaQueryList = window?.matchMedia(mediaQuery);
+  const documentChangeHandler = () => {
+    setMatch(!!mediaQueryList?.matches);
+  };
 
-    useWillUnmount(() => {
-      mediaQueryList.removeEventListener("change", documentChangeHandler);
-    });
+  useDidUpdate(() => {
+    mediaQueryList.addEventListener("change", documentChangeHandler);
+    documentChangeHandler();
+  }, [match]);
 
-    return match;
-  } else return null;
+  useWillUnmount(() => {
+    mediaQueryList.removeEventListener("change", documentChangeHandler);
+  });
+
+  return match;
 };
