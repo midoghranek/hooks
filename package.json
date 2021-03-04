@@ -1,0 +1,24 @@
+{
+  "name": "@ghranek/hooks",
+  "version": "0.0.1",
+  "description": "Custom React Hooks",
+  "keywords": [],
+  "author": "Muhammad Abul-Gharaniq <me@ghranek.com>",
+  "main": "build/index.js",
+  "umd:main": "build/hooks.umd.js",
+  "module": "build/hooks.m.js",
+  "source": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle -o build/ --no-compress",
+    "dev": "microbundle watch -o build/ --no-compress"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "microbundle": "^0.13.0",
+    "react": "^17.0.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
+  }
+}
