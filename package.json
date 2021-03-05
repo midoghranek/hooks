@@ -8,6 +8,7 @@
   "umd:main": "build/hooks.umd.js",
   "module": "build/hooks.m.js",
   "source": "src/index.ts",
+  "types": "build/index.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "microbundle -o build/ --no-compress",
